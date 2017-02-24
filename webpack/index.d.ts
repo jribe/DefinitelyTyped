@@ -581,6 +581,7 @@ declare namespace webpack {
 
     abstract class Plugin implements Tapable.Plugin {
         apply(compiler: Compiler): void;
+        plugin(name: 'after-emit', handler: (compilation: any, callback: webpack.Compiler.Handler) => void): void;
     }
 
     abstract class Stats {
